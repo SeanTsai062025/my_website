@@ -3351,6 +3351,66 @@ input, select, textarea {
 			height: 100%;
 			border: 0;
 		  }
-
-
 		  
+
+
+
+		  .experience {
+			display: flex;
+			gap: 2em;
+			margin-top: 1em;
+		  }
+		  
+		  .exp-item {
+			flex: 1;
+			background: rgba(0,0,0,0.03);
+			padding: 0.9em 1.2em;   /* 原本 padding 太大，縮小一點 */
+			border-radius: 8px;
+		  }
+		  
+		  .exp-item p {
+			margin: 0;
+			line-height: 1.5;     /* 行距縮小 */
+		  }
+		  
+		  .exp-date {
+			color: #888;
+			font-size: 0.9em;
+		  }
+		  
+		  /* 手機版仍然直排 */
+		  @media screen and (max-width: 736px) {
+			.experience {
+			  flex-direction: column;
+			}
+		  }
+		  
+
+		  .project-meta {
+			margin: 0.5em 0 1em 0;
+		  }
+		  
+		  .role-tag {
+			display: inline-block;
+			background: rgba(0, 0, 0, 0.05);
+			color: #555;
+			padding: 0.35em 0.75em;
+			border-radius: 6px;
+			font-size: 0.85em;
+			line-height: 1.4;
+		  }
+		  
+
+
+
+		  .skill-list {
+			font-size: 0.7em;      /* 字變小 */
+			line-height: 2;       /* 行距變緊湊 */
+			margin-top: 0.5em;
+		  }
+		  
+		  .skill-list br {
+			line-height: 1.2;
+		  }
+		  
+  
