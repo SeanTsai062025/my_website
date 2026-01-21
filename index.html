@@ -91,44 +91,32 @@
 					</section>
 
 				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Feel free to reach out for technical discussion, collaboration, or project-related
-							inquiries.</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
+				<section id="three">
+					<h2>Get In Touch</h2>
+					<p>Feel free to reach out for technical discussion, collaboration, or project-related inquiries.</p>
+					<div class="row">
+					  <div class="col-8 col-12-small">
+				  
+						<form method="POST" action="https://formspree.io/f/mqeejdgd">
+						  <div class="row gtr-uniform gtr-50">
+							<div class="col-6 col-12-xsmall">
+							  <input type="text" name="name" id="name" placeholder="Name" required />
 							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Columbus, OH 43202<br />
-										United States
-									</li>
-									
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										614-800-7949
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">tsai.654@osu.edu</a>
-									</li>
-								</ul>
+							<div class="col-6 col-12-xsmall">
+							  <input type="email" name="email" id="email" placeholder="Email" required />
 							</div>
-						</div>
-					</section>
+							<div class="col-12">
+							  <textarea name="message" id="message" placeholder="Message" rows="4" required></textarea>
+							</div>
+						  </div>
+				  
+						  <ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+						  </ul>
+						</form>
+				  
+					  </div>
+				  
 
 				<!-- Four -->
 				<!--
@@ -454,10 +442,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<!-- li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+						<li><a href="https://github.com/SeanTsai062025" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+						<li><a href="mailto:tsai.654@osu.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; Sean Tsai</li>
