@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Dexter Robotic Arm | Sean Tsai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Header (same style) -->
+    <header id="header">
+      <div class="inner">
+        <a href="../index.html" class="image avatar">
+          <img src="../images/big_head.png" alt="" />
+        </a>
+        <h1>
+          <strong> Image Segmentation</strong><br />
+          Mask2Former model: Dataset preparation, training, optimization, and deployment 
+          
+        </h1>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+      <section id="one">
+        <header class="major">
+          <h2>Project Overview</h2>
+        </header>
+      
+        <p>
+          Our goal is to enhance the panoptic segmentation model’s ability to accurately recognize and segment road lines, such as lane markings and road boundaries, which are essential for reliable road scene understanding.
+        </p>
+
+        <p>
+          We found that the Mapillary dataset provides very high-quality annotations for road lines, especially lane markings and road boundaries, which makes it an excellent dataset for improving road scene understanding.
+        </p>
+
+        <p>
+          Based on this advantage, we convert the Mapillary dataset into COCO format and fine-tune Mask2Former using NVIDIA TAO Toolkit. The trained model is then deployed on NVIDIA edge devices with TensorRT to achieve efficient and real-time panoptic segmentation.
+        </p>
+      
+        <h3>Demo Video (inference on Nvidia Jetson Orin)</h3>
+
+        <div class="video-row">
+          <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6QsVR5c4DM8?si=tw46kca0g4fkVsFH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        
+          <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yXy3jPLNEFE?si=nqygQ_05ubVo_gmN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        
+      
+        <h3>Mask2Former Introduction</h3>
+        <p>
+          Mask2Former is a universal segmentation framework that unifies semantic, instance, and panoptic segmentation in a single transformer-based model. With masked attention, it focuses on important image regions and generates high-quality masks efficiently, making it well suited for complex scene understanding in autonomous driving and robotics.
+        </p>
+        <div class="image-small">
+          <span class="image fit">
+            <img src="../images/fulls/mask_1.png" alt="Dexter overview" />
+          </span>
+        </div>
+        
+        
+        <h3>Explanation of the Mapillary dataset in COCO panoptic format</h3>
+        
+          <span class="image fit">
+            <img src="../images/fulls/mask_2.png" alt="Dexter overview" />
+          </span>
+        
+        <ul>
+        </ul>
+
+
+        
+        
+        <h3>Training result</h3>
+        
+          <span class="image fit">
+            <img src="../images/fulls/mask_3.png" alt="Dexter overview" />
+          </span>
+
+        <h3>Inference Pipeline</h3>
+      
+          <span class="image fit">
+            <img src="../images/fulls/mask_4.png" alt="Dexter overview" />
+          </span>
+        
+        
+         
+        
+        
+     
+      
+        
+      
+        
+      
+        <ul class="actions">
+          <li><a href="../index.html#two" class="button">Back to Portfolio</a></li>
+          <li><a href="https://github.com/yourrepo" class="button primary">GitHub</a></li>
+        </ul>
+      </section>
+      
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+          <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Sean Tsai</li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Dexter Robotic Arm | Sean Tsai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Header (same style) -->
+    <header id="header">
+      <div class="inner">
+        <a href="../index.html" class="image avatar">
+          <img src="../images/big_head.png" alt="" />
+        </a>
+        <h1>
+          <strong> AirControl Car</strong><br />
+          Gesture-Controlled Robotic Car
+        </h1>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+      <section id="one">
+        <header class="major">
+          <h2>Project Overview</h2>
+        </header>
+      
+        <p>
+          This project presents a gesture-controlled robotic car system that uses computer vision to
+          translate human body movements into real-time driving commands. By combining an Android
+          application for gesture recognition and an ESP32-based robotic vehicle, the system enables
+          intuitive, controller-free operation with live first-person video feedback from the robot.
+        </p>
+      
+        
+      
+        <h3>Demo Video & System Architecture</h3>
+        <div style="display: flex; gap: 1em;">
+
+          <div class="video-box">
+
+            <!-- Video on top -->
+            <div class="video">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/MggM2B_mLns?si=wgC6J9AE_y2rGDmp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          
+            <!-- Images below, side by side -->
+            <div class="image-row">
+              <span class="image fit">
+                <img src="../images/fulls/air_archi.png" alt="Architecture" />
+              </span>
+          
+              <span class="image fit">
+                <img src="../images/fulls/air_archi2.png" alt="Architecture" />
+              </span>
+            </div>
+          
+          </div>
+
+          
+          
+          
+          
+        
+        </div>
+        
+        
+
+        <p>
+          The system consists of two main components: an Android application and an ESP32-based robotic car.
+          The phone captures the user’s movements and converts them into control commands, which are sent
+          wirelessly to the robot. At the same time, the robot streams real-time video back to the phone,
+          forming a closed-loop interactive control system.
+        </p>
+      
+        
+        
+        <h3>Key Features</h3>
+        <ul>
+          <li>Vision-based gesture control using a smartphone camera</li>
+          <li>Real-time robotic car control via wireless communication</li>
+          <li>Live first-person video feedback from the robot</li>
+          <li>Multiple control modes for precision and realistic driving behavior</li>
+          <li>Safety mode to prevent accidental activation</li>
+        </ul>
+
+        <section id="control-modes">
+
+          <h3>Control Mode Switching for Gesture-Based Robotic Car</h3>
+        
+          <div class="mode-content">
+            <p>
+              The system provides three control modes to adapt to indoor navigation and real-world driving behavior.
+              Each mode defines how the car responds to recognized gestures.
+            </p>
+
+            <div class="image-small">
+              <span class="image fit">
+                <img src="../images/fulls/air_archi3.png" alt="Dexter overview" />
+              </span>
+            </div>
+            
+            <div class="image-small">
+              <span class="image fit">
+                <img src="../images/fulls/air_archi4.png" alt="Dexter overview" />
+              </span>
+            </div>
+            
+        
+            <h4>Control Modes</h4>
+            <ul>
+              <li>
+                <strong>Mode 0 (OFF)</strong>
+                <ul>
+                  <li>All gestures are ignored.</li>
+                  <li>Default mode when the app starts.</li>
+                  <li>Prevents accidental movement before the user is ready.</li>
+                </ul>
+              </li>
+        
+              <li>
+                <strong>Mode 1 – Limited Space Control Mode</strong>
+                <ul>
+                  <li>Designed for indoor or confined spaces.</li>
+                  <li>Movement and turning gestures are recognized independently.</li>
+                  <li>Allows rotating in place without forward motion.</li>
+                  <li>
+                    <strong>Commands:</strong>
+                    <ul>
+                      <li><code>move1</code> — move forward</li>
+                      <li><code>left1</code> — rotate left in place</li>
+                      <li><code>right1</code> — rotate right in place</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+        
+              <li>
+                <strong>Mode 2 – Real Driving Simulation Mode</strong>
+                <ul>
+                  <li>Mimics real vehicle steering behavior.</li>
+                  <li>Turning only works when moving forward.</li>
+                  <li>
+                    <strong>Commands:</strong>
+                    <ul>
+                      <li><code>move2</code> — move forward</li>
+                      <li><code>left2</code> — turn left while moving</li>
+                      <li><code>right2</code> — turn right while moving</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        
+            <h4>Mode Switching Mechanism</h4>
+            <ul>
+              <li>Bring both palms together and hold for a fixed time.</li>
+              <li>Mode order: <code>OFF → Mode 1 → Mode 2 → OFF</code></li>
+              <li>Cooldown prevents accidental switching.</li>
+            </ul>
+        
+            <h4>Visual Mode Feedback</h4>
+            <ul>
+              <li><strong>Red</strong> — OFF</li>
+              <li><strong>Green</strong> — Limited Space</li>
+              <li><strong>Yellow</strong> — Real Driving</li>
+            </ul>
+          </div>
+        
+        </section>
+        
+        
+      
+        <h3>Technologies Used</h3>
+        <ul>
+          <li>Computer Vision: MediaPipe Pose</li>
+          <li>Mobile Development: Android (Java)</li>
+          <li>Embedded Systems: ESP32 with FreeRTOS</li>
+          <li>Networking: Wi-Fi based wireless communication</li>
+          <li>Real-Time Streaming: Camera-based live video feedback</li>
+          <li>Motor Control: Embedded PWM motor control</li>
+        </ul>
+      
+        
+      
+        
+      
+        <ul class="actions">
+          <li><a href="../index.html#two" class="button">Back to Portfolio</a></li>
+          <li><a href="https://github.com/yourrepo" class="button primary">GitHub</a></li>
+        </ul>
+      </section>
+      
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+          <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Sean Tsai</li>
+          
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Dexter Robotic Arm | Sean Tsai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Header (same style) -->
+    <header id="header">
+      <div class="inner">
+        <a href="../index.html" class="image avatar">
+          <img src="../images/big_head.png" alt="" />
+        </a>
+        <h1>
+          <strong> IoT Vehicle Security</strong><br />
+          Remote CAN Bus Attack & Defense Simulation
+        </h1>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+      <section id="one">
+        <header class="major">
+          <h2>Project Overview</h2>
+        </header>
+      
+        <p>
+          This project demonstrates an automotive cybersecurity implementation using a Raspberry Pi 5. It simulates a realistic vehicle network attack scenario, showing how a hacker can remotely control a vehicle's CAN Bus via a compromised connected device (e.g., a Wi-Fi Gateway). Furthermore, it implements a robust defense mechanism using HMAC Signatures and Rolling Counters..
+        </p>
+
+        <h3>Demo: Attack and Defense</h3>
+        
+        
+        <div class="videocyber">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/MUriTMXM61s?si=guJNciTjrE_eyk9e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+
+          
+          This demo is placed first to highlight the core idea before diving into the technical details later.
+        </p>
+        
+        
+        <h3>CAN Bus Security Simulation: Attack vs. Defense</h3>
+
+        <div class="scenario-block">
+          <p>
+            This project simulates two distinct scenarios, ranging from a completely vulnerable system
+            to a secured architecture with a Security Gateway (Guardian).
+          </p>
+
+          <div class="scenario-item">
+            <h4><strong>Scenario 1: The Attack (Unprotected)</strong></h4>
+            <p>
+              In this scenario, the internal vehicle network (<code>vcan0</code>) lacks any authentication mechanism.
+              A hacker utilizes a compromised Web Gateway (<code>main.py</code>) to inject malicious CAN frames into the bus
+              via HTTP requests, effectively spoofing the speedometer on the dashboard (IC Sim).
+            </p>
+
+            <!-- Image placeholder -->
+            <span class="image fit"><img src="../images/fulls/cyber_1.png" alt="Scenario 1 diagram" /></span>
+          </div>
+
+          <div class="scenario-item">
+            <h4><strong>Scenario 2: The Defense (Secured)</strong></h4>
+            <p>
+              In this scenario, we introduce a Guardian (Security Gateway) and a Secure Sensor.
+            </p>
+
+            <ul>
+              <li>
+                <strong>Network Segmentation:</strong>
+                The network is split into an "Untrusted Zone" (<code>vcan0</code>) and a "Trusted Zone" (<code>vcan1</code>).
+              </li>
+              <li>
+                <strong>Authentication:</strong>
+                The sensor signs data using HMAC-SHA256.
+              </li>
+              <li>
+                <strong>Anti-Replay:</strong>
+                A Rolling Counter is implemented to prevent replay attacks.
+              </li>
+            </ul>
+
+            <p>
+              The Guardian monitors <code>vcan0</code>, filters out forged packets from the hacker,
+              and forwards only verified data to the dashboard located on <code>vcan1</code>.
+            </p>
+
+            <!-- Image placeholder -->
+            <span class="image fit"><img src="../images/fulls/cyber_1.png" alt="Scenario 2 diagram" /></span>
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+        
+        
+         
+        
+        
+     
+      
+        
+      
+        
+      
+        <ul class="actions">
+          <li><a href="../index.html#two" class="button">Back to Portfolio</a></li>
+          <li><a href="https://github.com/yourrepo" class="button primary">GitHub</a></li>
+        </ul>
+      </section>
+      
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+          <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Sean Tsai</li>
+          
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
