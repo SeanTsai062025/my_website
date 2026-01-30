@@ -3413,6 +3413,28 @@ input, select, textarea {
 			line-height: 1.2;
 		  }
 		  
+
+		  .media-layout {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 24px;
+		  }
+		  
+		  .media-block {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		  }
+		  
+		  .caption {
+			font-size: 0.85rem;
+			color: #666;
+			line-height: 1.4;
+		  }
+		  
+
+
+
 /* 一排兩個 */
 .media-grid{
   display: grid;
@@ -3468,19 +3490,6 @@ input, select, textarea {
   .media-grid{
     grid-template-columns: 1fr;
   }
-}
-
-section.media-grid{
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.media-grid .media-item{
-  margin: 0 !important;
-}
-
-.media-grid .media{
-  margin: 0 !important;
 }
 
 
