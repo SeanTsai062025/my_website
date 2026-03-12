@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Sean Tsai | Art Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/project-switch.css" />
+</head>
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="#" class="image avatar"><img src="images/big_head.png" alt="" /></a>
+            <h1><strong>Hi, I am Sean Tsai</strong>, <br />
+            A robotic engineer<br />
+            <br />
+            <div class="skill-list">
+                • Robotics<br />
+                • Embedded systems<br />
+                • Computer vision<br />
+                • Machine learning<br />
+                • CAD design<br />
+                • Full system integration<br />
+            </div>
+            <!-- Project Type Switch -->
+            <section id="project-switch" style="margin-top: 2em;">
+                <h3 class="project-switch-title">Project Type</h3>
+                <div class="project-switch-btns">
+                    <button id="btn-tech" class="project-btn">Technical Project</button>
+                    <button id="btn-art" class="project-btn active">Art Project</button>
+                </div>
+            </section>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        <!-- Art Project List -->
+        <section id="two">
+            <h2>Art Projects</h2>
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item">
+                    <a href="#" class="image fit thumb"><img src="images/thumbs/art1.png" alt="Art Project 1" /></a>
+                    <h3>Art Project 1</h3>
+                    <p>描述藝術專案內容。</p>
+                </article>
+                <article class="col-6 col-12-xsmall work-item">
+                    <a href="#" class="image fit thumb"><img src="images/thumbs/art2.png" alt="Art Project 2" /></a>
+                    <h3>Art Project 2</h3>
+                    <p>描述藝術專案內容。</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script>
+    // Project Type 按鈕互動
+    document.addEventListener('DOMContentLoaded', function() {
+        var techBtn = document.getElementById('btn-tech');
+        var artBtn = document.getElementById('btn-art');
+        artBtn.classList.add('active');
+        techBtn.classList.remove('active');
+        techBtn.addEventListener('click', function() {
+            techBtn.classList.add('active');
+            artBtn.classList.remove('active');
+            window.location.href = 'index.html';
+        });
+        artBtn.addEventListener('click', function() {
+            artBtn.classList.add('active');
+            techBtn.classList.remove('active');
+        });
+    });
+    </script>
+</body>
+</html>
